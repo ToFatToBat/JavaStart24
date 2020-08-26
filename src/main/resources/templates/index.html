@@ -5,9 +5,10 @@
     <title>PLista produktow</title>
 </head>
 <body>
-    <form method="post" action="/add" th:object="${product}">
+    <form method="post" th:action="/add" th:object="${product}">
         Nazwa produktu <input type="text" th:field="*{name}"><br/>
         Cena <input type="number" th:field="*{price}">
+        <input type="submit" th:value="Dodaj">
 
     </form>
 
