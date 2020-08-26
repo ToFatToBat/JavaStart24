@@ -2,14 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>PLista produktow</title>
+    <title>Lista produktow</title>
 </head>
 <body>
     <form method="post" th:action="/add" th:object="${product}">
         Nazwa produktu <input type="text" th:field="*{name}"><br/>
         Cena <input type="number" th:field="*{price}">
         <input type="submit" th:value="Dodaj">
-
     </form>
 
 
