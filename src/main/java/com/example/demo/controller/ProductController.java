@@ -11,16 +11,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ProductController {
-   private ProductRepository productRepository;
+    private ProductRepository productRepository;
 
+    @Autowired
     public ProductController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
-    @Autowired
 
-
-    @GetMapping ("/add")
+    @GetMapping("/add")
     String getAddForm(Model model) {
         Product product = new Product();
         model.addAttribute("product", product);
@@ -28,7 +27,7 @@ public class ProductController {
     }
 
     @PostMapping("add")
-    void add (Product product){
+    void add(Product product) {
         productRepository.add(product);
     }
 }
