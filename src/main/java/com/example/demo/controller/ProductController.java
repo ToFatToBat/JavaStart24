@@ -19,11 +19,11 @@ public class ProductController {
     }
 
 
-    @GetMapping("/add")
+    @GetMapping
     String getAddForm(Model model) {
         Product product = new Product();
         model.addAttribute("product", product);
-        return "/";
+        return"index";
     }
 
     @PostMapping("add")
