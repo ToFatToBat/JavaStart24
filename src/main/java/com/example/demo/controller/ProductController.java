@@ -9,8 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.ArrayList;
-
 @Controller
 public class ProductController {
     private ProductRepository productRepository;
@@ -29,7 +27,8 @@ public class ProductController {
     }
 
     @PostMapping("/add")
-    void add(Product product) {
+    String add(Product product) {
         productRepository.add(product);
+        return "index";
     }
 }
