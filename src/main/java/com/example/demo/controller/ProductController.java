@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class ProductController {
     private ProductRepository productRepository;
@@ -30,5 +32,12 @@ public class ProductController {
     String add(Product product) {
         productRepository.add(product);
         return "index";
+    }
+
+    @GetMapping("/lista")
+    String list(Model model) {
+        List<Product> products = productRepository.listAll();
+        model.addAttribute("products",products);
+        return "lista";
     }
 }

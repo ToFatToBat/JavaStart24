@@ -12,10 +12,17 @@ public class ProductRepository {
 
     public ProductRepository() {
     products = new ArrayList<>();
+    products.add(new Product("Komputer", 2000));
+    products.add(new Product("Samochod", 120000));
+    products.add(new Product("Zegarek", 600));
 
     }
 
     public void add(Product product) {
         products.add(product);
+    }
+
+    public ArrayList<Product> listAll() {
+        return new ArrayList<>(products)    ;
     }
 }
