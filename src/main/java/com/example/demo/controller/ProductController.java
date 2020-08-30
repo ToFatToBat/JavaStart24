@@ -38,6 +38,6 @@ public class ProductController {
     String list(Model model) {
         List<Product> products = productRepository.listAll();
         model.addAttribute("products",products);
-        return "lista";
+        return "productList";
     }
 }
