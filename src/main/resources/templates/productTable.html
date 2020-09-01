@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <title>Product table</title>
 </head>
+
+    <a href="/">Powrot</a><br/>
     <thread>
         <tr>
             <th>Produkt</th>
-            <th>Cena</th>
+            <th>Cena</th><br/>
         </tr>
     </thread>
     <tbody>
         <tr th:each="product: ${productTable}">
-            <td th:text="${product.getName()}">Produkt</td>
-            <td th:text="${product.getPrice()}">Cena</td>
+            <td> <span th:text="${product.getName()}">Produkt</span> </td>
+            <td> <span th:text="${product.getPrice()}">Cena</span> </td><br/>
         </tr>
     </tbody>
 </html>
