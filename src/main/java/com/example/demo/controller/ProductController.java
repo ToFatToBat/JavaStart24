@@ -40,4 +40,11 @@ public class ProductController {
         model.addAttribute("products",products);
         return "productList";
     }
+
+    @GetMapping("/table")
+    String table(Model model) {
+        List<Product> productsList = productRepository.listAll();
+        model.addAttribute("productTable", productsList);
+        return "productTable";
+    }
 }
