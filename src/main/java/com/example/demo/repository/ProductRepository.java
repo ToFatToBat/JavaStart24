@@ -25,4 +25,10 @@ public class ProductRepository {
     public ArrayList<Product> listAll() {
         return new ArrayList<>(products)    ;
     }
+
+    public double priceSum () {
+      return   products.stream()
+                .mapToDouble(price -> price.getPrice())
+                .sum();
+    }
 }

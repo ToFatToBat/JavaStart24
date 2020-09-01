@@ -36,15 +36,19 @@ public class ProductController {
 
     @GetMapping("/lista")
     String list(Model model) {
+        double priceSum = productRepository.priceSum();
         List<Product> products = productRepository.listAll();
         model.addAttribute("products",products);
+        model.addAttribute("priceSum", priceSum);
         return "productList";
     }
 
     @GetMapping("/table")
     String table(Model model) {
+        double priceSum = productRepository.priceSum();
         List<Product> productsList = productRepository.listAll();
         model.addAttribute("productTable", productsList);
+        model.addAttribute("priceSum", priceSum);
         return "productTable";
     }
 }

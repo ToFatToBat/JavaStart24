@@ -16,6 +16,7 @@
         <tr th:each="product: ${productTable}">
             <td> <span th:text="${product.getName()}">Produkt</span> </td>
             <td> <span th:text="${product.getPrice()}">Cena</span> </td><br/>
-        </tr>
+        </tr><br/>
+        <span th:text="|Suma cen: ${priceSum}|" </span>
     </tbody>
 </html>

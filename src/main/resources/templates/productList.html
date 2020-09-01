@@ -10,7 +10,9 @@
     <ul>
         <li th:each="product: ${products}"
             th:text="|${product.getName()} ${product.getPrice()}|"> Imie i cena </li>
-    </ul>
+    </ul><br/>
+        <span th:text="|Suma cen: ${priceSum}|" </span>
+
 
 </body>
 </html>
