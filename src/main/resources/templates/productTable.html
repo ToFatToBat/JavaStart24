@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product table</title>
+</head>
+
+    <a href="/">Powrot</a><br/>
+    <thread>
+        <tr>
+            <th>Produkt</th>
+            <th>Cena</th><br/>
+        </tr>
+    </thread>
+    <tbody>
+        <tr th:each="product: ${productTable}">
+            <td> <span th:text="${product.getName()}">Produkt</span> </td>
+            <td> <span th:text="${product.getPrice()}">Cena</span> </td><br/>
+        </tr><br/>
+        <span th:text="|Suma cen: ${priceSum}|" </span>
+    </tbody>
+</html>

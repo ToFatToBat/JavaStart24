@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Lista produktow</title>
+</head>
+<body>
+    <a href="/">Powrot</a><br/>
+
+    <ul>
+        <li th:each="product: ${products}"
+            th:text="|${product.getName()} ${product.getPrice()}|"> Imie i cena </li>
+    </ul><br/>
+        <span th:text="|Suma cen: ${priceSum}|" </span>
+
+
+</body>
+</html>
